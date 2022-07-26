@@ -1,0 +1,6 @@
+spring:
+  profiles:
+    active: dev #由于涉及到一些隐私配置，所以运行使用local环境，查看配置使用的dev配置
+server:
+  servlet:
+    context-path: /cwApi

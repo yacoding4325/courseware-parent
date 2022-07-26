@@ -1,0 +1,45 @@
+spring:
+  servlet:
+    multipart:
+      max-request-size: 100MB
+      max-file-size: 100MB
+  datasource:
+    url: jdbc:mysql://localhost:3306/courseware?characterEncoding=UTF-8&serverTimezone=Asia/Shanghai
+    username: root
+    password: yxym
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  redis:
+    host: localhost
+    database: 0
+    port: 6379
+    password:
+    jedis:
+      pool:
+        max-active: 8
+        max-wait: -1ms
+        max-idle: 8
+        min-idle: 0
+    timeout: 20000ms
+  application:
+    name: courseware
+server:
+  port: 5000
+
+oss:
+  endpoint: 'oss-cn-beijing.aliyuncs.com'
+  accessKeyId: '11'
+  accessKeySecret: '22'
+  bucketName: 'yacoding'
+
+wxpay:
+  mchid: '商家id'
+  key: '支付key'
+wxmini:
+  appid: '11'
+  secret: '22'
+mybatis-plus:
+  mapper-locations: classpath:mapper/*.xml
+  type-aliases-package: com.yacoding.courseware.pojo
+  global-config:
+    db-config:
+      table-prefix: cw_
