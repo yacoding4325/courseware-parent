@@ -1,10 +1,6 @@
 # courseware-parent
 # 项目界面
 
-
-
-
-
 ## 首页 课件列表
 
 ## 注意
