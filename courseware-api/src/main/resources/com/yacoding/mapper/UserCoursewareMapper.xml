@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.yacoding.courseware.mapper.UserCoursewareMapper">
+
+    <resultMap id="dtoMap" type="com.yacoding.courseware.pojo.dto.UserCoursewareDto">
+        <id column="id" property="id"/>
+        <result column="user_id" property="userId"/>
+        <result column="cw_id" property="cwId"/>
+        <result column="create_time" property="createTime"/>
+        <association property="courseware" javaType="com.yacoding.courseware.pojo.Courseware">
+            <id column="cw_id" property="id"/>
+            <result column="name" property="name"/>
+            <result column="price" property="price"/>
+            <result column="count" property="count"/>
+            <result column="url" property="url"/>
+        </association>
+    </resultMap>
+
+    <select id="findMyCourseware" parameterType="long" resultMap="dtoMap">
+        select uc.id, uc.user_id, uc.cw_id, uc.create_time,
+               c.name, c.price, c.count, c.url from cw_user_courseware uc,cw_courseware c
+        where uc.cw_id=c.id and uc.user_id=#{userId}
+    </select>
+</mapper>

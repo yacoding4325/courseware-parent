@@ -40,4 +40,20 @@ public class Courseware implements Serializable {
     private String carouselUrl;
 
     private Integer isCarousel;
+
+    public void setUrl(Object o) {
+
+    }
+
+    public static Object getIsCarousel(Courseware courseware) {
+        return courseware;
+    }
+
+    public static Object getId(Courseware courseware) {
+        return courseware;
+    }
+
+    public static Object getCarouselUrl(Courseware courseware) {
+        return courseware;
+    }
 }
